@@ -1,12 +1,8 @@
 <?php
 require 'includes/header.php';
 
-if (isset($_POST['tambah'])) {
-    if (insert($_POST) == 1) {
-        return header('Location: index.php');
-    } else {
-        return "error";
-    }
+if (isset($_GET['id'])) {
+    $data = getById($_GET['id']);
 }
 ?>
 
@@ -21,19 +17,19 @@ if (isset($_POST['tambah'])) {
                     <form action="" method="post">
                         <div class="form-group">
                             <label for="">Hasil tambang</label>
-                            <input type="text" name="mine_result" class="form-control">
+                            <input type="text" name="mine_result" class="form-control" value="<?= $data['mine_result'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="">warna</label>
-                            <input type="text" name="mine_color" class="form-control">
+                            <input type="text" name="mine_color" class="form-control" value="<?= $data['mine_color'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="">tanggal</label>
-                            <input type="date" name="install_date" class="form-control">
+                            <input type="date" name="install_date" class="form-control " value="<?= $data['install_date'] ?>" disabled>
                         </div>
                         <div class="form-group">
-                            <label for="">pemmilik</label>
-                            <input type="text" name="mine_owner" class="form-control">
+                            <label for="">pemilik</label>
+                            <input type="text" name="mine_owner" class="form-control" value="<?= $data['mine_owner'] ?>">
                         </div>
                 </div>
                 <div class="card-footer">

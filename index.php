@@ -1,5 +1,11 @@
 <?php
 require 'includes/header.php';
+
+$getUrl = $_SERVER['REQUEST_URI'];
+$uri = explode('/', $getUrl);
+if ($uri[2] == '' || $uri[2] == 'index.php') {
+    $minings = getAll('mining_tb');
+}
 ?>
 
 <div class="container my-4">
@@ -35,7 +41,7 @@ require 'includes/header.php';
                                     <td><?= $mining['install_date'] ?></td>
                                     <td><?= $mining['mine_owner'] ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-primary shadow"><img src="icon/pencil.svg" width="20"></a>
+                                        <a href="update.php?id=<?= $mining['mine_id'] ?>" class="btn btn-primary shadow"><img src="icon/pencil.svg" width="20"></a>
                                         <a href="#" class="btn btn-danger shadow"><img src="icon/trash.svg" width="20"></a>
                                     </td>
                                 </tr>

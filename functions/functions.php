@@ -19,6 +19,23 @@ function getAll($tbname)
     return $results;
 }
 
+function getById($id)
+{
+    global $conn;
+
+    $query = "SELECT * FROM mining_tb WHERE mine_id = " . $id;
+    $result = pg_query($conn, $query);
+
+    if (!$result) {
+        return "Error when mining data!";
+    }
+
+    while ($row = pg_fetch_assoc($result)) {
+        $results[] = $row;
+    }
+
+    return $results[0];
+}
 
 function insert($data)
 {

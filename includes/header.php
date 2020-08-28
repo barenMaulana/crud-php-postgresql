@@ -1,7 +1,5 @@
 <?php
 require 'init.php';
-
-$minings = getAll('mining_tb');
 ?>
 
 <!doctype html>
