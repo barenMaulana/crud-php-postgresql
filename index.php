@@ -11,6 +11,7 @@ $minings = getAll('mining_tb');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
     <title>PostrgeSQL CRUD</title>
 </head>
 
@@ -18,7 +19,12 @@ $minings = getAll('mining_tb');
     <div class="container my-4">
         <h3>CRUD | PostgreSQL</h3>
 
-        <div class="card">
+        <div class="row custom-alert">
+            <div class="col">
+            </div>
+        </div>
+
+        <div class="card shadow">
             <div class="card-body">
                 <table class="table">
                     <thead class="thead-dark">
@@ -40,8 +46,8 @@ $minings = getAll('mining_tb');
                                 <td><?= $mining['install_date'] ?></td>
                                 <td><?= $mining['mine_owner'] ?></td>
                                 <td>
-                                    <a href="#" class="btn btn-primary"></a>
-                                    <a href="#" class="btn btn-danger"></a>
+                                    <a href="#" class="btn btn-primary shadow"><img src="icon/pencil.svg" width="20"></a>
+                                    <a href="#" class="btn btn-danger shadow"><img src="icon/trash.svg" width="20"></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
