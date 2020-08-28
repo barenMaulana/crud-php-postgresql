@@ -48,7 +48,7 @@ require 'includes/header.php';
         <div class="col col-2 text-center side-navbar">
             <div class="card shadow">
                 <div class="card-body">
-                    <a href="#" class="btn btn-primary btn-sm">Add new</a>
+                    <a href="create.php" class="btn btn-primary btn-sm">Add new</a>
                 </div>
             </div>
         </div>
