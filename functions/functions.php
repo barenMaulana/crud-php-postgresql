@@ -12,7 +12,7 @@ function getAll($tbname)
         exit;
     }
 
-    while ($row = pg_fetch_row($result)) {
+    while ($row = pg_fetch_assoc($result)) {
         $results[] = $row;
     }
 
