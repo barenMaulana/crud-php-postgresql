@@ -52,3 +52,34 @@ function insert($data)
 
     return pg_affected_rows($insert);
 }
+
+function update($data)
+{
+    global $conn;
+
+    $mine_result = $data['mine_result'];
+    $mine_color = $data['mine_color'];
+    $date = $data['install_date'];
+    $owner = $data['mine_owner'];
+    $id = $data['mine_id'];
+
+    $query = "UPDATE mining_tb SET
+        mine_result = '$mine_result',
+        mine_color = '$mine_color',
+        install_date = '$date',
+        mine_owner = '$owner'
+        WHERE mine_id = $id";
+
+    $insert = pg_query($conn, $query);
+
+    return pg_affected_rows($insert);
+}
+
+function delete($id)
+{
+    global $conn;
+    $query = "DELETE FROM mining_tb WHERE mine_id =" . $id;
+    $delete = pg_query($conn, $query);
+
+    return pg_affected_rows($delete);
+}

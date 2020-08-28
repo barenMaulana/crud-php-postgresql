@@ -42,7 +42,7 @@ if ($uri[2] == '' || $uri[2] == 'index.php') {
                                     <td><?= $mining['mine_owner'] ?></td>
                                     <td>
                                         <a href="update.php?id=<?= $mining['mine_id'] ?>" class="btn btn-primary shadow"><img src="icon/pencil.svg" width="20"></a>
-                                        <a href="#" class="btn btn-danger shadow"><img src="icon/trash.svg" width="20"></a>
+                                        <a href="delete.php?id=<?= $mining['mine_id'] ?>" class="btn btn-danger shadow" onclick="return confirm('data akan terhapus')"><img src="icon/trash.svg" width="20"></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

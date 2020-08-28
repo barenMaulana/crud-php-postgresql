@@ -1,0 +1,9 @@
+dbname = barenmaulana
+table = mining_tb
+
+CREATE TABLE mining_tb(
+    mine_id serial PRIMARY KEY,
+    mine_color varchar(15) NOT NULL,
+    install_date date,
+    mine_owner varchar(20)
+);
